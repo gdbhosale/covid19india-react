@@ -10,7 +10,7 @@ function FAQ(props) {
 
   const getFAQs = () => {
     axios
-      .get('https://api.covid19india.org/faq.json')
+      .get(global.apiURL + '/faq.json')
       .then((response) => {
         setFaq(response.data.faq);
       })

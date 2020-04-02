@@ -19,7 +19,7 @@ function Summary(props) {
 
   const getStates = () => {
     axios
-      .get('https://api.covid19india.org/data.json')
+      .get(global.apiURL + '/data.json')
       .then((response) => {
         setStates(response.data.statewise);
         setDeltas(response.data.key_values[0]);

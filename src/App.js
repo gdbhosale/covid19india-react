@@ -20,6 +20,9 @@ import Banner from './components/banner';
 const history = require('history').createBrowserHistory;
 
 function App() {
+  global.apiURL = '/api/';
+  // global.apiURL = 'https://api.covid19india.org';
+
   const pages = [
     {
       pageLink: '/',

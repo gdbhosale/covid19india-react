@@ -29,8 +29,8 @@ function Home(props) {
   const getStates = async () => {
     try {
       const [response, stateDistrictWiseResponse] = await Promise.all([
-        axios.get('https://api.covid19india.org/data.json'),
-        axios.get('https://api.covid19india.org/state_district_wise.json'),
+        axios.get(global.apiURL + '/data.json'),
+        axios.get(global.apiURL + '/state_district_wise.json'),
       ]);
       setStates(response.data.statewise);
       setTimeseries(response.data.cases_time_series);

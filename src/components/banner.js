@@ -7,7 +7,7 @@ function Banner(props) {
 
   useEffect(() => {
     axios
-      .get('https://api.covid19india.org/website_data.json')
+      .get(global.apiURL + '/website_data.json')
       .then((response) => {
         setSnippets(response.data.factoids || []);
         setSnippet(response.data.factoids[0] || '');

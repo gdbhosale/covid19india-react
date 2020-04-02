@@ -11,9 +11,8 @@ function PatientDB(props) {
 
   useEffect(() => {
     async function fetchRawData() {
-      const response = await axios.get(
-        'https://api.covid19india.org/raw_data.json'
-      );
+      rawDataUrl = global.apiURL + 'raw_data.json';
+      const response = await axios.get(rawDataUrl);
       if (response.data) {
         setPatients(response.data.raw_data.filter((p) => p.detectedstate));
         setFetched(true);
